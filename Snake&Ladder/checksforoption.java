@@ -1,0 +1,30 @@
+public class checkForPlay {
+
+		public static final int noPlayOption = 0;
+		public static final int ladderOption = 1;
+		public static final int snakeOption = 2;
+		public static int playerOne = 1;
+		public static void main(String[] args){
+
+		//variable
+		double position = 0;
+		double diceRoll = (Math.floor(Math.random() * 10) % 6) + 1;
+                System.out.println("Dice rolled value: " + diceRoll);
+		int option = (int) Math.floor(Math.random() * 10) % 3;
+		switch (option) {
+			case noPlayOption:
+				position = position + 0;
+				break;
+			case ladderOption:
+				position = position + diceRoll;
+				break;
+			case snakeOption:
+				position = position - diceRoll;
+				if(position < 0){
+					position = 0;
+				}
+				break;
+		}
+
+	}
+}
